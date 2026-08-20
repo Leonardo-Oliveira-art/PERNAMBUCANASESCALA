@@ -1,0 +1,108 @@
+/* ================= Design system ================= */
+:root{
+  --navy:#1f2a58; --navy-deep:#161f44; --yellow:#f5c518; --yellow-ink:#4a3a05;
+  --paper:#fff; --bg:#f4f6fa; --fg:#232c4d; --muted:#6b7391; --border:#dfe3ee;
+  --radius:12px; --font-display:"Oswald",system-ui,sans-serif; --font-sans:"Barlow",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
+h1,h2,h3{font-family:var(--font-display);margin:0}
+button{font:inherit;cursor:pointer}
+input{font:inherit}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:30;background:var(--navy);color:#fff;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+header.top .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding-top:12px;padding-bottom:12px}
+header.top .brand{margin-right:auto}
+header.top h1{font-size:18px;letter-spacing:.05em}
+header.top p{margin:2px 0 0;font-size:12px;color:rgba(255,255,255,.7)}
+.logo-mark{font-family:var(--font-display);font-weight:700;letter-spacing:.08em;font-size:15px;color:var(--yellow)}
+.logo-img{height:30px;width:auto;display:block}
+
+.btn{display:inline-flex;align-items:center;gap:6px;border-radius:10px;border:1px solid transparent;padding:8px 14px;font-weight:600;font-size:14px;background:var(--navy);color:#fff}
+.btn:hover{filter:brightness(1.1)}
+.btn.secondary{background:var(--yellow);color:var(--yellow-ink)}
+.btn.outline{background:#fff;color:var(--navy);border-color:var(--border)}
+.btn.ghost{background:transparent;color:var(--fg)}
+.btn.sm{padding:5px 10px;font-size:13px}
+.btn.icon{padding:5px 9px;background:transparent;color:var(--muted)}
+.btn.icon:hover{background:#eef1f8;color:var(--navy)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+.tabs{display:flex;flex-wrap:wrap;gap:6px;background:#e9ecf5;padding:6px;border-radius:12px;margin:24px 0}
+.tab{border:0;background:transparent;padding:8px 14px;border-radius:9px;font-weight:600;font-size:14px;color:var(--muted)}
+.tab.active{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:16px}
+.card .pad{padding:16px}
+.card h2{font-size:16px;padding:14px 16px 0}
+.grid2{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+label.f{display:block;font-size:13px;font-weight:600;margin-bottom:4px}
+input[type=text],input[type=date],input[type=file]{width:100%;border:1px solid var(--border);border-radius:9px;padding:8px 11px;background:#fff}
+input:focus{outline:2px solid var(--navy);outline-offset:1px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+.spacer{margin-left:auto}
+.list{border:1px solid var(--border);border-radius:10px;list-style:none;margin:0;padding:0}
+.list li{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 14px;border-top:1px solid var(--border)}
+.list li:first-child{border-top:0}
+.list li span.name{flex:1;font-size:14px;font-weight:600}
+.muted{color:var(--muted);font-size:13px}
+.sector-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.sector-card .head{background:var(--navy);color:#fff;padding:9px 16px;font-family:var(--font-display);font-size:16px;letter-spacing:.04em}
+.sector-card .body{padding:12px;display:flex;flex-direction:column;gap:8px}
+.assign{display:flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:9px;padding:7px 10px}
+.assign .info{flex:1;min-width:0}
+.assign .info b{display:block;font-size:14px}
+.assign .info small{color:var(--muted)}
+.chip{border:1px solid var(--border);background:#fff;border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600;color:var(--navy)}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips.box{max-height:170px;overflow:auto;border:1px solid var(--border);border-radius:10px;padding:8px}
+
+dialog{border:0;border-radius:14px;padding:0;max-width:560px;width:calc(100% - 32px)}
+dialog::backdrop{background:rgba(15,20,40,.5)}
+dialog .dlg{padding:20px;display:flex;flex-direction:column;gap:16px}
+dialog h3{font-size:18px}
+.toast{position:fixed;top:16px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;padding:10px 18px;border-radius:10px;font-size:14px;z-index:99;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+
+.preview-shell{overflow:auto;background:#e9ecf5;border-radius:12px;padding:16px}
+.sheet-scaler{transform-origin:top center;width:fit-content;margin:0 auto;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+@media (max-width:900px){.sheet-scaler{transform:scale(.62);margin-bottom:-120mm}}
+@media (max-width:640px){.sheet-scaler{transform:scale(.42);margin-bottom:-175mm}}
+
+/* ================= Folha A4 ================= */
+.sheet{width:210mm;min-height:297mm;background:var(--paper);color:var(--navy);font-family:var(--font-sans);display:flex;flex-direction:column;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.sheet-header{position:relative;background:var(--navy);color:#fff;padding:7mm 10mm 6mm;border-bottom-left-radius:14mm;border-bottom-right-radius:14mm;text-align:center}
+.sheet-logo{height:11mm;width:auto;display:block;margin:0 auto 3mm}
+.sheet-word{font-family:var(--font-display);font-weight:700;font-size:5mm;letter-spacing:.25em;color:var(--yellow);margin:0 0 3mm}
+.sheet-title{font-family:var(--font-display);font-weight:700;font-size:15mm;line-height:1;margin:0;color:#fff}
+.sheet-date{margin:2.5mm 0 0;font-size:3.6mm;font-weight:600;letter-spacing:.18em;color:var(--yellow)}
+.sheet-rule{display:block;width:55%;height:1.1mm;margin:3.5mm auto 0;background:var(--yellow);border-radius:1mm}
+.sheet-dots{position:absolute;top:6mm;right:9mm;width:18mm;height:9mm;background-image:radial-gradient(var(--yellow) 40%,transparent 41%);background-size:3mm 3mm}
+.sheet-body{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:6mm;padding:7mm 9mm;align-content:start}
+.sheet-col{display:flex;flex-direction:column;gap:6mm}
+.sheet-block{border:.6mm solid var(--navy);border-radius:3mm;overflow:hidden;break-inside:avoid}
+.sheet-block-head{background:var(--navy);color:#fff;display:flex;align-items:center;gap:3mm;padding:2mm 4mm}
+.sheet-block-icon{display:inline-flex;align-items:center;justify-content:center;width:7mm;height:7mm;border-radius:50%;background:var(--yellow);color:var(--navy);flex:none}
+.sheet-block-icon svg{width:4.2mm;height:4.2mm}
+.sheet-block-title{font-family:var(--font-display);font-weight:700;font-size:6mm;line-height:1.1}
+.sheet-table{width:100%;border-collapse:collapse;table-layout:fixed}
+.sheet-table th{background:var(--yellow);color:var(--navy);font-family:var(--font-display);font-weight:600;font-size:3.2mm;padding:1.6mm 3mm;text-align:left}
+.sheet-table th:last-child,.sheet-table td:last-child{width:38%;text-align:center}
+.sheet-table td{border-top:.4mm solid var(--navy);padding:1.9mm 3mm;font-size:3.5mm;font-weight:500;color:var(--navy);overflow-wrap:anywhere}
+.sheet-table td:last-child{border-left:.4mm solid var(--navy);font-variant-numeric:tabular-nums}
+.sheet-footer{position:relative;background:var(--navy);color:#fff;display:flex;align-items:center;gap:3mm;padding:4mm 10mm;border-top-left-radius:10mm;border-top-right-radius:10mm;margin-top:auto}
+.sheet-footer-label{font-family:var(--font-display);font-weight:700;font-size:4mm;color:var(--yellow);letter-spacing:.04em}
+.sheet-footer-text{font-size:3.6mm;font-weight:600;line-height:1.35}
+.sheet-dots-footer{top:auto;bottom:4mm;right:9mm;height:6mm}
+
+/* ================= Impressão ================= */
+@page{size:A4 portrait;margin:0}
+@media print{
+  *,*::before,*::after{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  html,body{background:#fff!important;margin:0!important;padding:0!important;height:auto!important;overflow:visible!important}
+  .no-print{display:none!important}
+  .print-root{position:static!important;left:auto!important;top:auto!important}
+  #escala-sheet{width:210mm!important;min-height:0!important;height:292mm!important;margin:0!important;box-shadow:none!important;overflow:hidden!important;break-inside:avoid}
+}
+.print-root{position:absolute;left:-9999px;top:0;pointer-events:none}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Escala de Trabalho | Montagem e Impressão A4</title>
+<meta name="description" content="Monte a escala de trabalho da loja por setor, escolha colaboradores e horários e imprima a folha oficial em A4." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="top no-print">
+  <div class="wrap">
+    <img id="hdrLogo" class="logo-img" alt="" style="display:none">
+    <span id="hdrWord" class="logo-mark">PERNAMBUCANAS</span>
+    <div class="brand">
+      <h1>ESCALA DE TRABALHO</h1>
+      <p>Montagem manual · impressão em A4 retrato</p>
+    </div>
+    <button class="btn secondary" onclick="window.print()">Imprimir escala</button>
+  </div>
+</header>
+
+<main class="wrap no-print" style="padding-bottom:48px">
+  <nav class="tabs" id="tabs"></nav>
+  <section id="panel"></section>
+</main>
+
+<div class="print-root" id="printRoot"></div>
+
+<dialog id="dlg"><div class="dlg" id="dlgBody"></div></dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
